@@ -1,25 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is my "Breakable Toy" project in development during my time at Launch Academy
 
-Things you may want to cover:
+Dogsta is a social media application for anyone interested in dogs.
 
-* Ruby version
+With Dogsta you can create an account which will keep track of your favorite dog breeds by allowing you to favorite the breeds which will add them to your account's list
 
-* System dependencies
+------------------
 
-* Configuration
+Currently in development. The first version of this application will be released November 9th, 2018 so stay tuned!
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 # dogsta
