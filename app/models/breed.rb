@@ -4,5 +4,5 @@ class Breed < ApplicationRecord
   validates :img_url, presence: true
 
   has_many :favorites
-  has_many :users, through :favorites
+  has_many :users, through: :favorites
 end
