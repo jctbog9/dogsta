@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 
+import BreedBox from '../components/BreedBox';
+
 class BreedsContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      breeds: []
     };
+  }
+
+  componentDidMount() {
   }
 
   render() {
@@ -12,6 +18,7 @@ class BreedsContainer extends Component {
     return(
       <div>
         <p>"Breeds Container (All Breeds)"</p>
+        <BreedBox />
       </div>
     );
   }
