@@ -11,7 +11,6 @@ class BreedsContainer extends Component {
   }
 
   componentDidMount() {
-    // the fetch will go here and get the dog info from an API endpoint yet to be defined
   }
 
   render() {
