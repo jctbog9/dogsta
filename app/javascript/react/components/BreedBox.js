@@ -2,7 +2,13 @@ import React from 'react';
 
 const BreedBox = props => {
   return(
-    <p>this is the breed box</p>
+    <div>
+      <p>this is the breed box</p>
+      <p>{props.breedName}</p>
+      <p>{props.description}</p>
+      <img src={props.photo}/><br/>
+      <button onClick={props.handleRandomBreed}>Random Breed</button>
+    </div>
   )
 }
 
