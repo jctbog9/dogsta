@@ -16,10 +16,20 @@
 
  */
 
+body {
+  background-image: image('/dogsta/app/assets/images/dogs.png');
+}
+
 img {
   width: 480px;
 }
 
 .top-bar {
   color: white;
+}
+
+.top-bar img {
+  height: 40px;
+  width: 50px;
+  border: 1px solid #000000;
 }
