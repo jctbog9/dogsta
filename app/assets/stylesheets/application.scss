@@ -16,10 +16,59 @@
 
  */
 
+body {
+  background-image: url("dogs.png");
+  background-repeat: repeat;
+}
+
 img {
   width: 480px;
 }
 
 .top-bar {
   color: white;
+}
+
+.top-bar img {
+  height: 40px;
+  width: 50px;
+  border: 1px solid #000000;
+}
+
+.breed-box {
+  border: 5px solid #A1184B;
+  border-radius: 20px;
+  width: 50%;
+  background-color: #E87DA5;
+  margin-top: 65px;
+  margin-left: 25%;
+  margin-right: 25%;
+  padding: 0 20px 0 20px;
+}
+
+.breed-box h2 {
+  text-align: center;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.breed-box button{
+  height: 45px;
+  width: 50%;
+  margin-top: 20px;
+  margin-left: 25%;
+  margin-right: 25%;
+  padding: 0 20px 0 20px;
+}
+
+.breed-box img {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.breed-box-content {
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
