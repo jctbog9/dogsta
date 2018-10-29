@@ -3,11 +3,13 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :breeds, only: [:index]
+  resources :profile, only: [:index]
 
   namespace :api do
     namespace :v1 do
       resources :breeds, only: [:index, :show]
       resources :random_breed, only: [:index]
+      resources :current_user, only: [:index]
     end
   end
 end
