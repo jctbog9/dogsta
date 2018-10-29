@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import BreedBox from '../components/BreedBox';
 
-class BreedsContainer extends Component {
+class IndexContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -64,4 +64,4 @@ class BreedsContainer extends Component {
   }
 };
 
-export default BreedsContainer;
+export default IndexContainer;
