@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   mount_uploader :profile_photo, ProfilePhotoUploader
 
+  validates :role, presence: true
+
   has_many :favorites
   has_many :breeds, through: :favorites
 end

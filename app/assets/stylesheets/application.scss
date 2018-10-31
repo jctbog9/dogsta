@@ -17,8 +17,28 @@
  */
 
 body {
-  background-image: url("dogs.png");
-  background-repeat: repeat;
+  margin: 0;
+  padding: 0;
+}
+
+.member {
+  background-image: url("background.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+.shelter {
+  background-color: #E7F3F4;
+}
+
+.content-wrapper {
+  width: 80%;
+  height: 100%;
+  margin-left: 10%;
+  margin-right: 10%;
+  background-color: #FFFFFF;
 }
 
 img {
@@ -39,11 +59,12 @@ img {
   border: 5px solid #A1184B;
   border-radius: 20px;
   width: 50%;
-  background-color: #E87DA5;
+  background-color: #8ABCEF;
   margin-top: 65px;
   margin-left: 25%;
   margin-right: 25%;
   padding: 0 20px 0 20px;
+  opacity: 0.98;
 }
 
 .breed-box h2 {
@@ -67,8 +88,9 @@ img {
   margin-right: 10%;
 }
 
-.breed-box-content {
-  width: 90%;
-  margin-left: 5%;
-  margin-right: 5%;
+.breed-box-header {
+  text-align: center;
+  background-color: #A1184B;
+  padding-top: 5px;
+  margin: 0px;
 }

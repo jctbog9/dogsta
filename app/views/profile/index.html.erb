@@ -2,9 +2,11 @@
 <img src="<%= @user.profile_photo %>"/>
 <p><%= @user.email %></p>
 
-<h2>Favorites:</h2>
-<ul>
-  <% @favorites.each do |favorite| %>
-    <li><%= favorite.name %></li>
-  <% end %>
-</ul>
+<% if @user.role == "member" %>
+  <h2>Favorites:</h2>
+  <ul>
+    <% @favorites.each do |favorite| %>
+      <li><%= favorite.name %></li>
+    <% end %>
+  </ul>
+<% end %>

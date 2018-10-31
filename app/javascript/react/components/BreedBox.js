@@ -1,13 +1,21 @@
 import React from 'react';
 
 const BreedBox = props => {
-  return(
-    <div className="breed-box">
-      <div className="breed-box-content">
+  let content;
+  if (props.breedName == null) {
+    content = null
+  } else {
+    content =
+      <div>
         <h2>{props.breedName}</h2>
         <p>{props.description}</p>
+        <img src={props.photo}/><br/>
       </div>
-      <img src={props.photo}/><br/>
+  }
+
+  return(
+    <div className="breed-box">
+      {content}
       <button onClick={props.handleRandomBreed}>Random Breed</button>
     </div>
   )
