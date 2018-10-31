@@ -7,13 +7,15 @@ class IndexContainer extends Component {
     super(props);
     this.state = {
       breeds: [],
-      breedShow: {}
+      breedShow: {},
+      user: {},
+      background: 'user'
     };
     this.randomBreed = this.randomBreed.bind(this)
   }
 
   componentDidMount() {
-    fetch(`/api/v1/breeds`)
+    fetch(`/api/v1/current_user`)
       .then(response => {
         if (response.ok) {
           return response;
@@ -25,7 +27,7 @@ class IndexContainer extends Component {
       })
       .then(response => response.json())
       .then(body => {
-        this.setState({ breeds: body });
+        this.setState({ user: body, backrgound: body.role });
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
@@ -49,8 +51,9 @@ class IndexContainer extends Component {
   }
 
   render() {
-    return(
-      <div>
+    let renderedUI;
+    if (this.state.user.role === "member"){
+      renderedUI =
         <BreedBox
           handleRandomBreed={this.randomBreed}
           key={this.state.breedShow.id}
@@ -59,6 +62,29 @@ class IndexContainer extends Component {
           description={this.state.breedShow.description}
           photo={this.state.breedShow.img_url}
         />
+    } else if (this.state.user.role === "shelter") {
+      renderedUI =
+      <div className="content-wrapper">
+        <br />
+        <br />
+        <br />
+        <br />
+        <p>"Hello from the admin page!!!"</p>
+      </div>
+    } else {
+      renderedUI =
+      <div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <p>"This is what happens right now when nobody signs in page!!!"</p>
+      </div>
+    }
+
+    return(
+      <div>
+        {renderedUI}
       </div>
     );
   }
