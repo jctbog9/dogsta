@@ -10,11 +10,7 @@ RSpec.describe User, type: :model do
   it { should have_valid(:password).when(1234567) }
   it { should_not have_valid(:password).when(nil) }
 
-  it { should have_valid(:role).when("member") }
-  it { should have_valid(:role).when("user") }
-  it { should_not have_valid(:role).when(nil) }
-
-  it "role should be a string" do
-    expect User.role.to eq(string)
+  it "role will be a string" do
+    expect(User.new.role).to be_a(String)
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_30_161137) do
+ActiveRecord::Schema.define(version: 2018_10_31_145123) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,12 +23,24 @@ ActiveRecord::Schema.define(version: 2018_10_30_161137) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "favorites", force: :cascade do |t|
-    t.bigint "user_id", null: false
+  create_table "dogs", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "age", null: false
+    t.string "story", null: false
     t.bigint "breed_id", null: false
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["breed_id"], name: "index_favorites_on_breed_id"
+    t.index ["breed_id"], name: "index_dogs_on_breed_id"
+    t.index ["user_id"], name: "index_dogs_on_user_id"
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "dog_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dog_id"], name: "index_favorites_on_dog_id"
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 

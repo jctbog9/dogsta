@@ -6,6 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.create!(email: 'jctbog9@aol.com', password: 'johnny0929')
+User.create!(email: '1234@shelter.com', password: '123456789', role: "shelter")
+
 Breed.create!(name: 'Beagle', description: 'This is a Beagle! It is so cute and lovable <3', img_url: 'https://images.mentalfloss.com/sites/default/files/styles/mf_image_16x9/public/istock_000013918544_small.jpg?itok=LWmihUij&resize=1100x1100')
 Breed.create!(name: 'Dachshund', description: 'This is a Dachshund! They are really short but super cute! They kind of look like weiner dogs', img_url: 'https://www.rover.com/blog/wp-content/uploads/2017/06/pepper-mini-dachshund-960x540.jpg')
 Breed.create!(name: 'Alaskan Malamute', description: 'This malamute is a type of spitz with a strong loyalty to its master! Malamutes are immensely strong and heavy duty workers that are loyal, affectionate, and playful', img_url: 'https://vetstreet.brightspotcdn.com/dims4/default/877186f/2147483647/thumbnail/645x380/quality/90/?url=https%3A%2F%2Fvetstreet-brightspot.s3.amazonaws.com%2F6e%2F28%2Fd2835a0d40b6a599461307bbad6b%2Falaskan-malamute-ap-qlqcnq-645-x-380.jpg')
@@ -17,6 +20,13 @@ Breed.create!(name: 'Dalmation', description: 'Dalmations are muscular and built
 Breed.create!(name: 'Finnish Spitz', description: 'The Finnish Spitz is a small but fearless hunting dog with a unique style of tracking and indicating quarry.', img_url: 'https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/01191430/Finnish.Spitz_.AdobeStock_72595490.jpg')
 Breed.create!(name: 'French Bulldog', description: 'The French Bulldog is one of the world’s most popular small-dog breeds. The Frenchie is a playful, alert, and adaptable pup which makes them quite the catch for those living in areas without much access to open running areas.', img_url: 'https://frenchbulldogclub.org/wp-content/uploads/2014/01/slider6.jpg')
 
-Favorite.create!(user_id: 1, breed_id: 2)
-Favorite.create!(user_id: 1, breed_id: 1)
-Favorite.create!(user_id: 1, breed_id: 4)
+Dog.create!(name: 'Pencil', age: 4, story: 'This pup was rescued from a shelter and is really just loking for someone to love <3', breed_id: 1, user_id: 1)
+Dog.create!(name: 'Dominic', age: 6, story: 'This boxer is a tough dude who will protect you from any and all danger. He will always try to make sure his family is safe', breed_id: 4, user_id: 1)
+Dog.create!(name: 'Triks', age: 1, story: 'This trickster likes to play fetch and then sneak off to under the covers and hide so that he can play with the toy he just caught! Adopt him please!', breed_id: 6)
+Dog.create!(name: 'Astro', age: 58, story: 'Gets along well with george but sometimes gives Judy a hard time', breed_id: 9)
+Dog.create!(name: 'Scooby', age: 49, story: 'This pup may be a bit of a scaredy-cat at times but will be very loyal and loves his scooby-snacks!', breed_id: 5)
+Dog.create!(name: 'Brian', age: 69, story: 'Brian sucks most of the time but is kind of funny. He also died once', breed_id: 1)
+
+Favorite.create!(user_id: 1, dog_id: 2)
+Favorite.create!(user_id: 1, dog_id: 1)
+Favorite.create!(user_id: 1, dog_id: 4)
