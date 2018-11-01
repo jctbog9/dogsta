@@ -9,5 +9,5 @@ class User < ApplicationRecord
   validates :role, presence: true
 
   has_many :favorites
-  has_many :breeds, through: :favorites
+  has_many :dogs, through: :favorites
 end
