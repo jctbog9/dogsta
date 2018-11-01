@@ -6,7 +6,6 @@
   <h2>Favorites:</h2>
   <ul>
     <% @favorites.each do |favorite| %>
-    <% binding.pry %>
       <li><%= favorite.dog.name %></li>
     <% end %>
   </ul>
