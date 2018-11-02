@@ -8,6 +8,9 @@ class User < ApplicationRecord
 
   validates :role, presence: true
 
+  belongs_to :shelter, required: false
+
   has_many :favorites
   has_many :dogs, through: :favorites
+
 end

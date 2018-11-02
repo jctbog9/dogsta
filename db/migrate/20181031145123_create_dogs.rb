@@ -6,7 +6,7 @@ class CreateDogs < ActiveRecord::Migration[5.2]
       t.string :story, null: false
 
       t.belongs_to :breed, null: false
-      t.belongs_to :user
+      t.belongs_to :shelter, null: false
 
       t.timestamps null: false
     end

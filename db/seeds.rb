@@ -6,8 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create!(email: 'jctbog9@aol.com', password: 'johnny0929')
-User.create!(email: '1234@shelter.com', password: '123456789', role: "shelter")
+Shelter.create!(name: 'THE Shelter', address: '77 summer street', description: 'This is the very first shelter at Launch Academy!')
+Shelter.create!(name: 'Last Hope K9 Rescue', address: '71 Commercial Street, Boston, MA 02109', description: 'Last Hope K9 Rescue (LHK9) is a 501(c)(3), 100% volunteer run, foster based, all breed rescue.')
+
+User.create!(email: 'jctbog9@aol.com', password: '123456')
+User.create!(email: '1234@shelter.com', password: '123456789', role: "shelter", shelter_id: 1)
+
 
 Breed.create!(name: 'Beagle', description: 'This is a Beagle! It is so cute and lovable <3', img_url: 'https://images.mentalfloss.com/sites/default/files/styles/mf_image_16x9/public/istock_000013918544_small.jpg?itok=LWmihUij&resize=1100x1100')
 Breed.create!(name: 'Dachshund', description: 'This is a Dachshund! They are really short but super cute! They kind of look like weiner dogs', img_url: 'https://www.rover.com/blog/wp-content/uploads/2017/06/pepper-mini-dachshund-960x540.jpg')
@@ -20,12 +24,12 @@ Breed.create!(name: 'Dalmation', description: 'Dalmations are muscular and built
 Breed.create!(name: 'Finnish Spitz', description: 'The Finnish Spitz is a small but fearless hunting dog with a unique style of tracking and indicating quarry.', img_url: 'https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/01191430/Finnish.Spitz_.AdobeStock_72595490.jpg')
 Breed.create!(name: 'French Bulldog', description: 'The French Bulldog is one of the world’s most popular small-dog breeds. The Frenchie is a playful, alert, and adaptable pup which makes them quite the catch for those living in areas without much access to open running areas.', img_url: 'https://frenchbulldogclub.org/wp-content/uploads/2014/01/slider6.jpg')
 
-Dog.create!(name: 'Pencil', age: 4, story: 'This pup was rescued from a shelter and is really just loking for someone to love <3', breed_id: 1, user_id: 1)
-Dog.create!(name: 'Dominic', age: 6, story: 'This boxer is a tough dude who will protect you from any and all danger. He will always try to make sure his family is safe', breed_id: 4, user_id: 1)
-Dog.create!(name: 'Triks', age: 1, story: 'This trickster likes to play fetch and then sneak off to under the covers and hide so that he can play with the toy he just caught! Adopt him please!', breed_id: 6)
-Dog.create!(name: 'Astro', age: 58, story: 'Gets along well with george but sometimes gives Judy a hard time', breed_id: 9)
-Dog.create!(name: 'Scooby', age: 49, story: 'This pup may be a bit of a scaredy-cat at times but will be very loyal and loves his scooby-snacks!', breed_id: 5)
-Dog.create!(name: 'Brian', age: 69, story: 'Brian sucks most of the time but is kind of funny. He also died once', breed_id: 1)
+Dog.create!(name: 'Pencil', age: 4, story: 'This pup was rescued from a shelter and is really just loking for someone to love <3', breed_id: 1, shelter_id: 1)
+Dog.create!(name: 'Dominic', age: 6, story: 'This boxer is a tough dude who will protect you from any and all danger. He will always try to make sure his family is safe', breed_id: 4, shelter_id: 1)
+Dog.create!(name: 'Triks', age: 1, story: 'This trickster likes to play fetch and then sneak off to under the covers and hide so that he can play with the toy he just caught! Adopt him please!', breed_id: 6, shelter_id: 1)
+Dog.create!(name: 'Astro', age: 58, story: 'Gets along well with george but sometimes gives Judy a hard time', breed_id: 9, shelter_id: 1)
+Dog.create!(name: 'Scooby', age: 49, story: 'This pup may be a bit of a scaredy-cat at times but will be very loyal and loves his scooby-snacks!', breed_id: 5, shelter_id: 2)
+Dog.create!(name: 'Brian', age: 69, story: 'Brian sucks most of the time but is kind of funny. He also died once', breed_id: 1, shelter_id: 2)
 
 Favorite.create!(user_id: 1, dog_id: 2)
 Favorite.create!(user_id: 1, dog_id: 1)
