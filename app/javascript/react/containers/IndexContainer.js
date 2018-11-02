@@ -9,11 +9,8 @@ class IndexContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      breeds: [],
-      breedShow: {},
       user: {},
     };
-    this.randomBreed = this.randomBreed.bind(this)
   }
 
   componentDidMount() {
@@ -34,24 +31,6 @@ class IndexContainer extends Component {
       .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
-  randomBreed() {
-    fetch(`/api/v1/random_breed`)
-      .then(response => {
-        if (response.ok) {
-          return response;
-        } else {
-          let errorMessage = `${response.status} (${response.statusText})`,
-              error = new Error(errorMessage);
-          throw(error);
-        }
-      })
-      .then(response => response.json())
-      .then(body => {
-        this.setState({ breedShow: body });
-      })
-      .catch(error => console.error(`Error in fetch: ${error.message}`));
-  }
-
   render() {
     let renderedUI;
     if (this.state.user.role === "member"){
@@ -62,6 +41,7 @@ class IndexContainer extends Component {
     } else if (this.state.user.role === "shelter") {
       renderedUI =
         <ShelterUI
+          handleRevert={this.goToMemberUI}
         />
     } else {
       renderedUI =

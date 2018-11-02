@@ -9,6 +9,7 @@ const App = (props) => {
     <Router history={browserHistory}>
       <Route path='/' component={IndexContainer} />
       <Route path='/breeds' component={IndexContainer} />
+      <Route path='/breeds/:id' component={BreedShowContainer} />
     </Router>
   )
 }

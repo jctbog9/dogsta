@@ -37,8 +37,7 @@ class IndexContainer extends Component {
     let dogs;
     if (this.state.shelter.id !== 0) {
       dogs = this.state.shelter.dogs.map(dog => {
-        debugger
-        return <li>{dog.name}</li>
+        return <li key={dog.id}>{dog.name}</li>
       })
     }
 
