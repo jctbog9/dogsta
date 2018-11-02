@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const BreedBox = props => {
   let content;
@@ -7,9 +8,13 @@ const BreedBox = props => {
   } else {
     content =
       <div>
-        <h2>{props.breedName}</h2>
+        <Link to={`/breeds/${props.id}`}>
+          {props.breedName}
+        </Link>
         <p>{props.description}</p>
-        <img src={props.photo}/><br/>
+        <Link to={`/breeds/${props.id}`}>
+          <img src={props.photo}/><br/>
+        </Link>
       </div>
   }
 

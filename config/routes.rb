@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'breeds#index'
   devise_for :users
 
-  resources :breeds, only: [:index]
+  resources :breeds, only: [:index, :show]
   resources :profile, only: [:index]
 
   namespace :api do
