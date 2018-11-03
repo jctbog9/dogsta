@@ -1,4 +1,4 @@
-class Api::V1::ShelterController < ApplicationController
+class Api::V1::CurrentShelterController < ApplicationController
   def index
     render json: shelter
   end

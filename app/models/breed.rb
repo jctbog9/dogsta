@@ -3,4 +3,5 @@ class Breed < ApplicationRecord
   validates :description, presence: true
   validates :img_url, presence: true
 
+  has_many :dogs
 end
