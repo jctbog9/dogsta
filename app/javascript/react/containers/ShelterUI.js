@@ -16,7 +16,7 @@ class IndexContainer extends Component {
   }
 
   componentDidMount() {
-    fetch(`/api/v1/shelter`)
+    fetch(`/api/v1/current_shelter`)
       .then(response => {
         if (response.ok) {
           return response;

@@ -5,7 +5,7 @@ feature 'user signs out', %Q{
   I want to sign out
   So that my identity is forgotten about on the machine I'm using
 } do
-  
+
   scenario 'authenticated user signs out' do
     user = FactoryBot.create(:user)
 
@@ -19,7 +19,9 @@ feature 'user signs out', %Q{
     expect(page).to have_content('Signed in successfully')
 
     click_link 'Sign Out'
-    expect(page).to have_content('Signed out successfully')
+    expect(page).to have_content('Log in')
+    expect(page).to have_content('Email')
+    expect(page).to have_content('Password')
   end
 
   scenario 'unauthenticated user attempts to sign out' do
