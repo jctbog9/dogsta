@@ -11,7 +11,7 @@ Rails.application.routes.draw do
       resources :random_breed, only: [:index]
       resources :current_user, only: [:index]
       resources :current_shelter, only: [:index]
-      resources :dogs, only: [:index, :create, :new]
+      resources :dogs, only: [:index, :create, :new, :destroy]
     end
   end
 end
