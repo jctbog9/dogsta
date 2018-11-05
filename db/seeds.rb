@@ -29,8 +29,9 @@ Dog.create!(name: 'Dominic', age: 6, story: 'This boxer is a tough dude who will
 Dog.create!(name: 'Triks', age: 1, story: 'This trickster likes to play fetch and then sneak off to under the covers and hide so that he can play with the toy he just caught! Adopt him please!', breed_id: 6, shelter_id: 1)
 Dog.create!(name: 'Astro', age: 58, story: 'Gets along well with george but sometimes gives Judy a hard time', breed_id: 9, shelter_id: 1)
 Dog.create!(name: 'Scooby', age: 49, story: 'This pup may be a bit of a scaredy-cat at times but will be very loyal and loves his scooby-snacks!', breed_id: 5, shelter_id: 2)
-Dog.create!(name: 'Brian', age: 69, story: 'Brian sucks most of the time but is kind of funny. He also died once', breed_id: 1, shelter_id: 2)
+Dog.create!(name: 'Brian', age: 69, story: 'Brian sucks most of the time but is kind of funny. He also died once', breed_id: 1, shelter_id: 1)
 
 Favorite.create!(user_id: 1, dog_id: 2)
 Favorite.create!(user_id: 1, dog_id: 1)
 Favorite.create!(user_id: 1, dog_id: 4)
+Favorite.create!(user_id: 1, dog_id: 6)

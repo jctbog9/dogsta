@@ -16,6 +16,12 @@ class Api::V1::DogsController < ApplicationController
 
   def destroy
     @dog = Dog.find(params[:id])
+    if @dog.favorites.length > 0
+      @favorites = @dog.favorites
+      @favorites.each do |favorite|
+        favorite.destroy
+      end
+    end
     @dog.destroy
     render json: { message: "Review deleted successfully" }
   end
