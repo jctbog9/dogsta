@@ -5,6 +5,10 @@ class Api::V1::DogsController < ApplicationController
     render json: Dog.all
   end
 
+  def show
+    render json: Dog.find(params[:id])
+  end
+
   def create
     @dog = Dog.new(dog_params)
     if @dog.save

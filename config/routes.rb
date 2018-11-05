@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :breeds, only: [:index, :show]
   resources :profile, only: [:index]
+  resources :dogs, only: [:show]
 
   namespace :api do
     namespace :v1 do
@@ -13,7 +14,7 @@ Rails.application.routes.draw do
       resources :random_breed, only: [:index]
       resources :current_user, only: [:index]
       resources :current_shelter, only: [:index]
-      resources :dogs, only: [:index, :create, :new, :destroy]
+      resources :dogs, only: [:index, :show, :create, :new, :destroy]
     end
   end
 end

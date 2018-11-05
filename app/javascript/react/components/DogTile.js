@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Link } from 'react-router';
+
 const DogTile = props => {
 
   let remove;
@@ -9,7 +11,9 @@ const DogTile = props => {
 
   return(
     <div>
-      <li>{props.name}</li>
+      <Link to={`/dogs/${props.id}`}>
+        <li>{props.name}</li>
+      </Link>
       {remove}
     </div>
   )

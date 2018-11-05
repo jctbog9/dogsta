@@ -7,4 +7,5 @@ class Dog < ApplicationRecord
   has_many :users, through: :favorites
 
   belongs_to :breed
+  belongs_to :shelter
 end
