@@ -105,12 +105,11 @@ class BreedShowContainer extends Component {
       }
 
       return (
-
-
         <div>
           <DogTile
             key={dog.id}
             id={dog.id}
+            shelter={dog.shelter_id}
             name={dog.name}
             story={dog.story}
             age={dog.age}
