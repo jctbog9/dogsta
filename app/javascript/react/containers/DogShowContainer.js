@@ -42,6 +42,7 @@ class DogShowContainer extends Component {
             age={this.state.dog.age}
           />
           <ShelterBox
+            id={this.state.dog.shelter.id}
             name={this.state.dog.shelter.name}
           />
         </div>

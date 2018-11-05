@@ -2,21 +2,16 @@ import React, { Component } from 'react';
 
 import DogTile from '../components/DogTile';
 
-class ShelterUI extends Component {
+class ShelterShowContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      shelter: {
-        id: 0,
-        name: '',
-        description: '',
-        dogs: ['']
-      }
+      shelter: []
     };
   }
 
   componentDidMount() {
-    fetch(`/api/v1/current_shelter`)
+    fetch(`/api/v1/shelters/${this.props.params.id}`)
       .then(response => {
         if (response.ok) {
           return response;
@@ -35,9 +30,9 @@ class ShelterUI extends Component {
 
   render() {
     let dogs;
-    if (this.state.shelter) {
+    if (this.state.shelter.dogs) {
       dogs = this.state.shelter.dogs.map(dog => {
-        return (
+        return(
           <div>
             <DogTile
               key={dog.id}
@@ -47,18 +42,19 @@ class ShelterUI extends Component {
           </div>
         )
       })
+    } else {
+      return <h2>There are currently no dogs available for adoption at this shelter</h2>
     }
 
     return(
       <div className="content-wrapper">
         <p>{this.state.shelter.name}</p>
         <p>{this.state.shelter.description}</p>
-        <ul>
-          {dogs}
-        </ul>
+        <p>{this.state.shelter.address}</p>
+        {dogs}
       </div>
     );
   }
 };
 
-export default ShelterUI;
+export default ShelterShowContainer;

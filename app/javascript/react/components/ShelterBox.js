@@ -7,7 +7,9 @@ const ShelterBox = props => {
   return(
     <div>
       <h2>Shelter:</h2>
-      <p>{props.name}</p>
+      <Link to={`/shelters/${props.id}`}>
+        <p>{props.name}</p>
+      </Link>
     </div>
   )
 }
