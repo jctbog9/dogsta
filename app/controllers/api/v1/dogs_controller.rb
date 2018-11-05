@@ -14,6 +14,12 @@ class Api::V1::DogsController < ApplicationController
     end
   end
 
+  def destroy
+    @dog = Dog.find(params[:id])
+    @dog.destroy
+    render json: { message: "Review deleted successfully" }
+  end
+
   private
 
   def dog_params

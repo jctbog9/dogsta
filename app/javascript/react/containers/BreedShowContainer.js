@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import DogFormContainer from './DogFormContainer';
 
+import DogTile from '../components/DogTile';
+
 class BreedShowContainer extends Component {
   constructor(props) {
     super(props);
@@ -57,6 +59,35 @@ class BreedShowContainer extends Component {
       .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
+  deleteDog(dogId) {
+    fetch(`/api/v1/dogs/${dogId}`, {
+      method: 'DELETE',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      credentials: 'same-origin'
+    })
+      .then(response => {
+        if (response.ok) {
+          return response;
+        } else {
+          let errorMessage = `${response.status} (${response.statusText})`,
+              error = new Error(errorMessage);
+          throw(error);
+        }
+      })
+      .then(response => response.json())
+      .then(body => {
+        let oldDogs = this.state.dogs
+        let newDogs = oldDogs.filter(dog => {
+          return dog.id !== dogId
+        })
+        this.setState({ dogs: newDogs})
+      })
+      .catch(error => console.error(`Error in fetch: ${error.message}`));
+  }
+
   render() {
     let form;
     if (window.currentUser.role === "shelter"){
@@ -68,7 +99,24 @@ class BreedShowContainer extends Component {
     }
 
     let dogs = this.state.dogs.map(dog => {
-      return <li key={dog.id}>{dog.name}</li>
+
+      let deleteHandler = () => {
+        this.deleteDog(dog.id)
+      }
+
+      return (
+        <div>
+          <DogTile
+            key={dog.id}
+            id={dog.id}
+            shelter={dog.shelter_id}
+            name={dog.name}
+            story={dog.story}
+            age={dog.age}
+            delete={deleteHandler}
+          />
+        </div>
+      )
     })
 
     let available;
