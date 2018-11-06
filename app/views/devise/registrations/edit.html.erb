@@ -16,7 +16,7 @@
     </div>
 
     <div class="field">
-      <%= f.label :profile_photo, 'Profile Picture' %>
+      <%= f.label :profile_photo, UIDecider.logo?(current_user) %>
       <%= f.file_field :profile_photo %>
     </div>
 

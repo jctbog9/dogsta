@@ -92,10 +92,12 @@ class BreedShowContainer extends Component {
     let form;
     if (window.currentUser.role === "shelter"){
       form =
-      <DogFormContainer
-        handleSubmit={this.addNewDog}
-        breedId={this.props.params.id}
-      />
+      <div className="form">
+        <DogFormContainer
+          handleSubmit={this.addNewDog}
+          breedId={this.props.params.id}
+        />
+      </div>
     }
 
     let dogs = this.state.dogs.map(dog => {
@@ -105,7 +107,7 @@ class BreedShowContainer extends Component {
       }
 
       return (
-        <div>
+        <div className="dog-box">
           <DogTile
             key={dog.id}
             id={dog.id}
@@ -121,18 +123,26 @@ class BreedShowContainer extends Component {
 
     let available;
     if (dogs.length > 0) {
-      available = <h3>Available for adoption:</h3>
+      available = <h3>Available for adoption</h3>
     } else {
       available = <h3>There are no dogs of this breed currently available for adoption</h3>
     }
 
     return(
       <div className="content-wrapper">
-        <h2>{this.state.breed.name}</h2>
-        <img src={this.state.breed.img_url}/>
-        <p>{this.state.breed.description}</p>
-        {available}
-        {dogs}
+        <div className="header">
+          <h2>{this.state.breed.name}</h2>
+        </div>
+        <div className="info-holder">
+          <img src={this.state.breed.img_url}/>
+          <div className="description">
+            <p>{this.state.breed.description}</p>
+          </div>
+          <div className="availability">
+            {available}
+          </div>
+          {dogs}
+        </div>
         {form}
       </div>
     );
