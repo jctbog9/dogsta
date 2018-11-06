@@ -1,12 +1,4 @@
-
-<img src="<%= @user.profile_photo %>"/>
-<p><%= @user.email %></p>
-
-<% if @user.role == "member" %>
-  <h2>Favorites:</h2>
-  <ul>
-    <% @favorites.each do |favorite| %>
-      <li><%= favorite.dog.name %></li>
-    <% end %>
-  </ul>
-<% end %>
+<div class="content-wrapper">
+  <img src="<%= @user.profile_photo %>"/>
+  <p><%= @user.email %></p>
+</div>
