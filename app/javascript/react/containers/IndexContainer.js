@@ -41,7 +41,7 @@ class IndexContainer extends Component {
     } else if (this.state.user.role === "shelter") {
       renderedUI =
         <ShelterUI
-          handleRevert={this.goToMemberUI}
+
         />
     } else {
       renderedUI =

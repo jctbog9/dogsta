@@ -33,7 +33,7 @@ class DogShowContainer extends Component {
     let content;
     if (this.state.dog.name !== undefined) {
       content =
-        <div>
+        <div className="info-holder">
           <DogBox
             key={this.state.dog.id}
             id={this.state.dog.id}
@@ -41,11 +41,13 @@ class DogShowContainer extends Component {
             story={this.state.dog.story}
             age={this.state.dog.age}
           />
-          <ShelterBox
-            id={this.state.dog.shelter.id}
-            name={this.state.dog.shelter.name}
-            dog={this.state.dog}
-          />
+          <div className="description">
+            <ShelterBox
+              id={this.state.dog.shelter.id}
+              name={this.state.dog.shelter.name}
+              dog={this.state.dog}
+            />
+          </div>
         </div>
     } else {
       <p>Loading please wait...</p>
