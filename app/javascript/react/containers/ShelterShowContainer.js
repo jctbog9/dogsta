@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 
 import DogTile from '../components/DogTile';
+import BreedTile from '../components/BreedTile';
+import ShelterShowDogBox from '../components/ShelterShowDogBox';
 
 class ShelterShowContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      shelter: []
+      shelter: {},
     };
   }
 
@@ -30,14 +32,16 @@ class ShelterShowContainer extends Component {
 
   render() {
     let dogs;
-    if (this.state.shelter.dogs) {
+    if (this.state.shelter.dogs !== undefined) {
       dogs = this.state.shelter.dogs.map(dog => {
+
         return(
-          <div>
-            <DogTile
+          <div className="dog-box">
+            <ShelterShowDogBox
               key={dog.id}
               id={dog.id}
               name={dog.name}
+              shelter={dog.shelter_id}
             />
           </div>
         )
@@ -48,9 +52,15 @@ class ShelterShowContainer extends Component {
 
     return(
       <div className="content-wrapper">
-        <p>{this.state.shelter.name}</p>
-        <p>{this.state.shelter.description}</p>
-        <p>{this.state.shelter.address}</p>
+        <div className="info-holder">
+          <div className="header">
+            <p>{this.state.shelter.name}</p>
+          </div>
+          <div className="description">
+            <p>{this.state.shelter.description}</p>
+            <p>{this.state.shelter.address}</p>
+          </div>
+        </div>
         {dogs}
       </div>
     );

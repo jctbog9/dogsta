@@ -38,12 +38,12 @@ body {
 
 .content-wrapper {
   padding-top: 60px;
-  height: auto;
+  margin-top: 40px;
+  height: 100%;
   width: 80%;
   margin-left: 10%;
   margin-right: 10%;
   background-color: rgba(172,98,119, 0.9);
-  padding-bottom: 20px;
 }
 
 img {
@@ -139,6 +139,9 @@ nav.top-bar {
   border: 2px solid #942A4D;
   border-radius: 10px;
   height: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .info-holder img {
@@ -160,6 +163,7 @@ nav.top-bar {
   border: 1px solid #000000;
   border-radius: 10px;
   background-color: #FBF2F4;
+  margin-bottom: 10px;
 }
 
 .float-left {
@@ -178,6 +182,7 @@ nav.top-bar {
   border: 2px solid #942A4D;
   border-radius: 10px;
   margin: 20px;
+  float: left;
 }
 
 .dog-box li {
@@ -225,7 +230,7 @@ nav.top-bar {
   padding-top: 60px;
   height: 80%;
   width: 80%;
-  margin-top: 20%;
+  margin-top: 5%;
   margin-left: 10%;
   margin-right: 10%;
   margin-bottom: 10%;
@@ -270,4 +275,13 @@ nav.top-bar {
 .messages {
   height: 80%;
   background-color: #FFFFFF;
+}
+
+.center {
+  width: 20%;
+  margin-left: 10%;
+}
+
+.center button{
+  border-radius: 20px;
 }
