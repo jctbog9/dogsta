@@ -1,8 +1,9 @@
 import React from 'react';
 
 const Message = ({ message, user }) => {
+
   let sender;
-  if (window.currentUser.id === user.id) {
+  if (window.currentUser.id === message.user.id) {
     sender = "sender"
   } else {
     sender = "receiver"
@@ -10,7 +11,8 @@ const Message = ({ message, user }) => {
 
   return(
     <div className={sender}>
-      <u>{user.email}</u> <br/> {message.message}
+      <u>{user.email}</u><br />
+      {message.body}
     </div>
   );
 };

@@ -21,7 +21,7 @@ const BreedBox = props => {
   return(
     <div className="breed-box">
       {content}
-      <button onClick={props.handleRandomBreed}>Random Breed</button>
+      <i className="fas fa-arrow-circle-right fa-5x" onClick={props.handleRandomBreed}></i>
     </div>
   )
 }

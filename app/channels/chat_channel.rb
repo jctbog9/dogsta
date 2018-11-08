@@ -1,6 +1,6 @@
 class ChatChannel < ApplicationCable::Channel
   def subscribed
-    stream_from "chat_#{params[:chat_id]}"
+    stream_from "chat_#{params[:shelter_id]}"
   end
 
   def unsubscribed
@@ -10,7 +10,7 @@ class ChatChannel < ApplicationCable::Channel
   def receive(data)
     puts data
 
-    chat = Chat.find_or_create_by(id: params[:chat_id])
+    chat = Chat.find_or_create_by(shelter_id: params[:shelter_id])
     new_message = Message.new(body: data["message"], user: User.find(data["user"]["id"]))
     new_message.chat = chat
     new_message.save!
@@ -20,10 +20,10 @@ class ChatChannel < ApplicationCable::Channel
     chat_json = {
       "chat_key": chat_key,
       "message": new_message.body,
-      "messageId": new_message.id,
+      "id": new_message.id,
       "user": data["user"]
     }
 
-    ActionCable.server.broadcast("chat_#{params[:chat_id]}", chat_json)
+    ActionCable.server.broadcast("chat_#{params[:shelter_id]}", chat_json)
   end
 end
