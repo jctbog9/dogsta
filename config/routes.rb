@@ -17,6 +17,7 @@ Rails.application.routes.draw do
       resources :shelters, only: [:index, :show]
       resources :current_shelter, only: [:index]
       resources :dogs, only: [:index, :show, :create, :new, :destroy]
+      resources :chats, only: [:show]
     end
   end
 

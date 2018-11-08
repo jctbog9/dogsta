@@ -17,10 +17,28 @@ class ChatContainer extends Component {
   }
 
   componentDidMount() {
+
+    fetch(`/api/v1/chats/${this.props.params.id}`)
+    .then(response => {
+      if (response.ok) {
+        return response;
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+        error = new Error(errorMessage);
+        throw(error);
+      }
+    })
+    .then(response => response.json())
+    .then(body => {
+      console.log(body)
+      this.setState({ messages: body });
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`));
+
     App.chatChannel = App.cable.subscriptions.create(
       {
         channel: "ChatChannel",
-        chat_id: this.props.params["id"]
+        shelter_id: this.props.params["id"]
       },
       {
         connected: () => console.log("ChatChannel connected"),
@@ -34,7 +52,9 @@ class ChatContainer extends Component {
   }
 
   handleMessageReceipt(message) {
-    this.setState({ messages: this.state.messages.concat(message) })
+    let data = {id: message.id, body: message.message, user: message.user}
+    debugger
+    this.setState({ messages: this.state.messages.concat(data) })
   }
 
   handleClearForm() {
@@ -45,7 +65,6 @@ class ChatContainer extends Component {
     event.preventDefault();
     let prepMessage = this.state.message
     let user_info = this.state.user
-    // this.setState({ messages: this.state.messages.concat(prepMessage) })
 
     App.chatChannel.send({
      message: prepMessage,
@@ -60,10 +79,11 @@ class ChatContainer extends Component {
   }
 
   render() {
+    console.log(`These are the messages ${this.state.messages}`)
     let messages = this.state.messages.map(message => {
       return(
         <Message
-          key={message.messageId}
+          key={message.id}
           message={message}
           user={message.user}
         />

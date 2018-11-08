@@ -99,6 +99,14 @@ nav.top-bar {
   width: 80%;
   margin-left: 10%;
   margin-right: 10%;
+  box-shadow: 2px 2px 2px 2px #000000;
+}
+
+.breed-box img:hover {
+  box-shadow: none;
+  border-bottom: 1px solid #000000;
+  border-right: 1px solid #000000;
+  opacity: 0.8;
 }
 
 .breed-box a {
@@ -264,16 +272,23 @@ nav.top-bar {
 .sender {
   background-color: #99B8E3;
   text-align: right;
+  float: left;
+  width: 100%;
 }
 
 .receiver {
   background-color: #FFFFFF;
-  height: 10%;
   text-align: left;
+  float: left;
+  width: 100%;
 }
 
 .messages {
-  height: 80%;
+  overflow-y: scroll;
+  height: 40vh;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
   background-color: #FFFFFF;
 }
 
@@ -284,4 +299,16 @@ nav.top-bar {
 
 .center button{
   border-radius: 20px;
+}
+
+.fa-arrow-circle-right{
+  border-radius: 10px;
+  color: #A11D4E;
+  padding: 0 10px 0 10px;
+  margin: 10px 0 10px 0;
+}
+
+.fa-arrow-circle-right:hover{
+  color: #D83A75;
+  cursor: pointer;
 }
