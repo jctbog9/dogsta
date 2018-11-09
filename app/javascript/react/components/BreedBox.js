@@ -8,10 +8,14 @@ const BreedBox = props => {
   } else {
     content =
       <div>
-        <Link to={`/breeds/${props.id}`}>
-          {props.breedName}
-        </Link>
-        <p>{props.description}</p>
+        <div className="header">
+          <Link to={`/breeds/${props.id}`}>
+            {props.breedName}
+          </Link>
+        </div>
+        <div className="description">
+          <p>{props.description}</p>
+        </div>
         <Link to={`/breeds/${props.id}`}>
           <img src={props.photo}/><br/>
         </Link>

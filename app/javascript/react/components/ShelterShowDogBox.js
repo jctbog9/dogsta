@@ -21,6 +21,9 @@ const DogTile = props => {
       <Link to={`/dogs/${props.id}`}>
         <li>{props.name}</li>
       </Link>
+      <Link to={`/dogs/${props.id}`}>
+        <img src="http://www.dog-find.com/img/default-image-450.jpg"/>
+      </Link>
       {chat}
     </div>
   )

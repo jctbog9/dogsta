@@ -7,15 +7,18 @@ const BreedTile = props => {
     content = null
   } else {
     content =
-      <div>
+      <div className="shelter-dog-box">
         <Link to={`/breeds/${props.id}`}>
-          {props.name}
+          <li>{props.name}</li>
+        </Link>
+        <Link to={`/breeds/${props.id}`}>
+          <img src={props.image}/>
         </Link>
       </div>
   }
 
   return(
-    <div className="breed-box">
+    <div>
       {content}
     </div>
   )

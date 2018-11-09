@@ -1,0 +1,91 @@
+.chat-window {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  height: 90%;
+  width: 90%;
+  margin: 5%;
+  background-color: rgba(172,98,119, 0.9);
+  border: 2px solid #303B77;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.chat-field {
+  margin-top: 10px;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 10px;
+}
+
+.chat-field input {
+  float: left;
+  width: 70%;
+  height: 50px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.chat-field button {
+  width: 30%;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin-bottom: 10%;
+}
+
+
+.sender {
+  background-color: #99B8E3;
+  text-align: right;
+  width: 20%;
+  padding-right: 10px;
+  margin-left: 50%;
+  width: 48%;
+  padding-left: 10px;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.receiver {
+  background-color: #FFFFFF;
+  text-align: left;
+  margin-right: 50%;
+  width: 50%;
+  padding-left: 10px;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.messages {
+  overflow-y: scroll;
+  height: 90%;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  background-color: #FFFFFF;
+  border: 1px solid #000000;
+}
+
+.messages-cover {
+  height: 90%;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  background-color: #8ABCEF;
+  padding-top: 45px;
+  border-radius: 20px;
+  border: 2px solid #313C73;
+}
+
+.center {
+  width: 20%;
+  margin-left: 5%;
+}
+
+.center button{
+  margin-top: 20px;
+  border-radius: 20px;
+}

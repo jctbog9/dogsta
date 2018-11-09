@@ -34,7 +34,6 @@ class ShelterShowContainer extends Component {
     let dogs;
     if (this.state.shelter.dogs !== undefined) {
       dogs = this.state.shelter.dogs.map(dog => {
-
         return(
           <div className="dog-box">
             <ShelterShowDogBox
@@ -61,7 +60,9 @@ class ShelterShowContainer extends Component {
             <p>{this.state.shelter.address}</p>
           </div>
         </div>
-        {dogs}
+        <div className="shelter-dogs">
+          {dogs}
+        </div>
       </div>
     );
   }
