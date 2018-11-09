@@ -1,0 +1,61 @@
+.breed-box {
+  text-align: center;
+  border: 5px solid #A1184B;
+  border-radius: 20px;
+  width: 50%;
+  background-color: #8ABCEF;
+  margin-top: 65px;
+  margin-left: 25%;
+  margin-right: 25%;
+  padding: 0 20px 0 20px;
+  opacity: 0.98;
+}
+
+.breed-box h2 {
+  text-align: center;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.breed-box button{
+  height: 45px;
+  width: 50%;
+  margin-top: 20px;
+  margin-left: 25%;
+  margin-right: 25%;
+  padding: 0 20px 0 20px;
+}
+
+.breed-box img {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  border-bottom: 1px solid #000000;
+  border-right: 1px solid #000000;
+  transition: all 0.2s ease;
+  opacity: 0.92;
+}
+
+.breed-box img:hover {
+  box-shadow: none;
+  width: 82%;
+  margin-left: 8%;
+  margin-right: 8%;
+  border-bottom: 1px solid #000000;
+  border-right: 1px solid #000000;
+  box-shadow: 2px 2px 2px 2px #000000;
+  opacity: 1.0;
+}
+
+.breed-box a {
+  color: black;
+  font-size: 50px;
+  text-decoration: underline;
+}
+
+.breed-box-header {
+  text-align: center;
+  background-color: #A1184B;
+  padding-top: 5px;
+  margin: 0px;
+}

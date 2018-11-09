@@ -92,7 +92,7 @@ class BreedShowContainer extends Component {
     let form;
     if (window.currentUser.role === "shelter"){
       form =
-      <div className="form">
+      <div className="breed-box">
         <DogFormContainer
           handleSubmit={this.addNewDog}
           breedId={this.props.params.id}
@@ -123,9 +123,9 @@ class BreedShowContainer extends Component {
 
     let available;
     if (dogs.length > 0) {
-      available = <h3>Available for adoption</h3>
+      available = <div className="availability">Available for adoption</div>
     } else {
-      available = <h3>There are no dogs of this breed currently available for adoption</h3>
+      available = <div className="availability">There are no dogs of this breed currently available for adoption</div>
     }
 
     return(
@@ -138,12 +138,12 @@ class BreedShowContainer extends Component {
           <div className="description">
             <p>{this.state.breed.description}</p>
           </div>
-          <div className="availability">
+          <div className="all-dogs">
             {available}
+            {dogs}
           </div>
-          {dogs}
         </div>
-        {form}
+          {form}
       </div>
     );
   }

@@ -14,6 +14,7 @@ class ChatContainer extends Component {
     this.handleClearForm = this.handleClearForm.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleMessageChange = this.handleMessageChange.bind(this);
+    this.updateScroll = this.updateScroll.bind(this);
   }
 
   componentDidMount() {
@@ -53,8 +54,8 @@ class ChatContainer extends Component {
 
   handleMessageReceipt(message) {
     let data = {id: message.id, body: message.message, user: message.user}
-    debugger
     this.setState({ messages: this.state.messages.concat(data) })
+    this.updateScroll();
   }
 
   handleClearForm() {
@@ -72,6 +73,12 @@ class ChatContainer extends Component {
     })
 
     this.handleClearForm();
+
+  }
+
+  updateScroll(){
+    let element = document.getElementById("scroll-div");
+    element.scrollTop = element.scrollHeight;
   }
 
   handleMessageChange(event) {
@@ -92,10 +99,12 @@ class ChatContainer extends Component {
 
     return(
       <div className="chat-window">
-        <div className="messages">
-          {messages}
+        <div className="messages-cover">
+          <div className="messages" id="scroll-div">
+            {messages}
+          </div>
         </div>
-        <form onSubmit={this.handleFormSubmit}>
+        <form onSubmit={this.handleFormSubmit} className="chat-field">
           <ChatField
             content={this.state.message}
             name='message'

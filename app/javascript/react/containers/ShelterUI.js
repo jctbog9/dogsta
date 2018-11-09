@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import DogTile from '../components/DogTile';
 import BreedTile from '../components/BreedTile';
+import ViewInquiries from '../components/ViewInquiries';
 
 import DogFormContainer from './DogFormContainer';
 
@@ -122,19 +123,19 @@ class ShelterUI extends Component {
       button = <button onClick={this.hideBreeds}>Hide</button>
 
       breeds = this.state.breeds.map(breed => {
-
         return (
           <div>
             <BreedTile
               key={breed.id}
               id={breed.id}
               name={breed.name}
+              image={breed.img_url}
             />
           </div>
         )
       })
     } else {
-      button = <button onClick={this.fetchBreeds}>See Breeds</button>
+      button = <button onClick={this.fetchBreeds}>See All Breeds</button>
     }
 
     return(
@@ -148,13 +149,20 @@ class ShelterUI extends Component {
             <p>{this.state.shelter.address}</p>
           </div>
         </div>
-        <ul>
+        <ViewInquiries
+          id={this.state.shelter.id}
+          inbox={this.state.shelter.id}
+        />
+        <div className="shelter-dogs">
           {dogs}
-        </ul>
-        <div className="center">
-          {button}
         </div>
-        {breeds}
+
+          <div className="center">
+            {button}
+          </div>
+        <div className="shelter-dogs">
+          {breeds}
+        </div>
       </div>
     );
   }
