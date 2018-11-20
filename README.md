@@ -1,13 +1,13 @@
 # README
 
-This is my "Breakable Toy" project in development during my time at Launch Academy
+This is my "Breakable Toy" project developed during my time at Launch Academy and maintained/updated thereafter.
 
-Dogsta is a social media application for anyone interested in dogs.
+Dogsta is a social media application for anyone interested in adopting a dog.
 
-With Dogsta you can create an account which will keep track of your favorite dog breeds by allowing you to favorite the breeds which will add them to your account's list
+Dogsta also allows for businesses to create accounts and list pets for adoption through the site.
+
+With Dogsta, users can create an account which will allow them to browse dogs that are currently available for adoption and actively chat with the shelter that listed them using Action Cable.
 
 ------------------
-
-Currently in development. The first version of this application will be released November 9th, 2018 so stay tuned!
 
 # dogsta
