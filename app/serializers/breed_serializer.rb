@@ -1,4 +1,4 @@
 class BreedSerializer < ActiveModel::Serializer
-  attributes :id, :name, :description, :img_url, :dogs
+  attributes :id, :name, :life_span, :bred_for, :breed_group, :weight, :height, :dogs
 
 end

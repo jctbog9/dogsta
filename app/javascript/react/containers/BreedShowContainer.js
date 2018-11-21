@@ -128,16 +128,23 @@ class BreedShowContainer extends Component {
       available = <div className="availability">There are no dogs of this breed currently available for adoption</div>
     }
 
+    let purpose;
+    if (this.state.breed.bred_for) {
+      purpose = <p>Bred for {this.state.breed.bred_for}</p>
+    }
+
     return(
       <div className="content-wrapper">
         <div className="header">
           <h2>{this.state.breed.name}</h2>
         </div>
+        <div className="description">
+          <p>Average Age: {this.state.breed.life_span}</p>
+          <p>Average Height: {this.state.breed.height}</p>
+          <p>Average Weight: {this.state.breed.weight}</p>
+          {purpose}
+        </div>
         <div className="info-holder">
-          <img src={this.state.breed.img_url}/>
-          <div className="description">
-            <p>{this.state.breed.description}</p>
-          </div>
           <div className="all-dogs">
             {available}
             {dogs}
