@@ -13,12 +13,6 @@ const BreedBox = props => {
             {props.breedName}
           </Link>
         </div>
-        <div className="description">
-          <p>{props.description}</p>
-        </div>
-        <Link to={`/breeds/${props.id}`}>
-          <img src={props.photo}/><br/>
-        </Link>
       </div>
   }
 

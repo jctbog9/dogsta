@@ -17,8 +17,11 @@ ActiveRecord::Schema.define(version: 2018_11_08_195456) do
 
   create_table "breeds", force: :cascade do |t|
     t.string "name", null: false
-    t.string "description", null: false
-    t.string "img_url", null: false
+    t.string "life_span", null: false
+    t.string "bred_for", default: "null"
+    t.string "breed_group", default: "dog"
+    t.string "weight", null: false
+    t.string "height", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -81,7 +84,7 @@ ActiveRecord::Schema.define(version: 2018_11_08_195456) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "profile_photo", default: "default"
+    t.string "profile_photo", default: "default.jpg"
     t.string "role", default: "member", null: false
     t.bigint "shelter_id"
     t.index ["email"], name: "index_users_on_email", unique: true

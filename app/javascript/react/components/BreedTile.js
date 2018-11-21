@@ -11,9 +11,6 @@ const BreedTile = props => {
         <Link to={`/breeds/${props.id}`}>
           <li>{props.name}</li>
         </Link>
-        <Link to={`/breeds/${props.id}`}>
-          <img src={props.image}/>
-        </Link>
       </div>
   }
 
