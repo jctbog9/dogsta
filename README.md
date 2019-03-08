@@ -1,4 +1,6 @@
-# README
+# dogsta
+
+http://dogsta.herokuapp.com/
 
 This is my "Breakable Toy" project developed during my time at Launch Academy and maintained/updated thereafter.
 
@@ -8,6 +10,4 @@ Dogsta also allows for businesses to create accounts and list pets for adoption 
 
 With Dogsta, users can create an account which will allow them to browse dogs that are currently available for adoption and actively chat with the shelter that listed them using Action Cable.
 
-------------------
-
-# dogsta
+Built using Ruby 2.4.5 and ReactJS on the front-end with a PostgreSQL Database for persisting data
