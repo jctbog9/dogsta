@@ -1,14 +1,11 @@
 .header {
   text-align: center;
-  width: 60%;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-left: 20%;
-  margin-right: 20%;
-  height: auto;
+  width: 90%;
+  margin: 10px auto;
   border: 2px solid #942A4D;
   border-radius: 10px;
   background-color: #5661B3;
+  overflow-x: scroll;
 }
 
 .header h2 {

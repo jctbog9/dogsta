@@ -54,6 +54,7 @@ class IndexContainer extends Component {
           handleRandomBreed={this.randomBreed}
           id={this.state.breedShow.id}
           breedName={this.state.breedShow.name}
+          imageUrl={this.state.breedShow.image_url}
         />
       </div>
     );

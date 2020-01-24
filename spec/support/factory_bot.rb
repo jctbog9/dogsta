@@ -20,6 +20,7 @@ FactoryBot.define do
     breed_group { "This breed is part of a XYZ group" }
     weight { "This breed usually weighs XYZ amount at adulthood" }
     height { "This breed is usually XYZ inches tall" }
+    image_url { "fakeimage.com" }
   end
 
   factory :dog do

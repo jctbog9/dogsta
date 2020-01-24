@@ -8,8 +8,6 @@ class ChatChannel < ApplicationCable::Channel
   end
 
   def receive(data)
-    puts data
-
     chat = Chat.find_or_create_by(shelter_id: params[:shelter_id])
     new_message = Message.new(body: data["message"], user: User.find(data["user"]["id"]))
     new_message.chat = chat
