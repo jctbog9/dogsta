@@ -26,31 +26,23 @@
   padding: 0 20px 0 20px;
 }
 
-.breed-box img {
+.image-container {
+  display: flex;
+  align-items: center;
+  height: 400px;
   width: 80%;
-  margin-left: 10%;
-  margin-right: 10%;
-  border-bottom: 1px solid #000000;
-  border-right: 1px solid #000000;
-  transition: all 0.2s ease;
-  opacity: 0.92;
+  margin: auto;
+  overflow: hidden;
 }
 
 .breed-box img:hover {
-  box-shadow: none;
-  width: 82%;
-  margin-left: 8%;
-  margin-right: 8%;
-  border-bottom: 1px solid #000000;
-  border-right: 1px solid #000000;
-  box-shadow: 2px 2px 2px 2px #000000;
-  opacity: 1.0;
+  opacity: 0.75;
+  cursor: pointer;
 }
 
 .breed-box a {
   color: black;
-  font-size: 50px;
-  text-decoration: underline;
+  font-size: 30px;
 }
 
 .breed-box-header {

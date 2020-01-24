@@ -1,25 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-const BreedBox = props => {
+const BreedBox = ({ id, imageUrl, breedName, handleRandomBreed }) => {
   let content;
-  if (props.breedName == null) {
+  if (breedName == null) {
     content = null
   } else {
     content =
       <div>
-        <div className="header">
-          <Link to={`/breeds/${props.id}`}>
-            {props.breedName}
-          </Link>
-        </div>
+        <Link to={`/breeds/${id}`}>
+          <div className="header">
+            {breedName}
+          </div>
+          <div className="image-container">
+            <img src={imageUrl}/>
+          </div>
+        </Link>
       </div>
   }
 
   return(
     <div className="breed-box">
       {content}
-      <i className="fas fa-arrow-circle-right fa-5x" onClick={props.handleRandomBreed}></i>
+      <i className="fas fa-arrow-circle-right fa-5x" onClick={handleRandomBreed}></i>
     </div>
   )
 }

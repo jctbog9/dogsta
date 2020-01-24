@@ -31,7 +31,6 @@ class ChatContainer extends Component {
     })
     .then(response => response.json())
     .then(body => {
-      console.log(body)
       this.setState({ messages: body });
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
@@ -45,7 +44,6 @@ class ChatContainer extends Component {
         connected: () => console.log("ChatChannel connected"),
         disconnected: () => console.log("ChatChannel disconnected"),
         received: data => {
-          console.log(data)
           this.handleMessageReceipt(data)
         }
       }
@@ -86,7 +84,6 @@ class ChatContainer extends Component {
   }
 
   render() {
-    console.log(`These are the messages ${this.state.messages}`)
     let messages = this.state.messages.map(message => {
       return(
         <Message

@@ -7,6 +7,7 @@ class Breed < ApplicationRecord
   validates :breed_group, required: false
   validates :weight, presence: true
   validates :height, presence: true
+  validates :image_url, presence: true
 
   has_many :dogs
 
