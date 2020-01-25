@@ -2,9 +2,9 @@ class UIDecider
 
   def self.calculate_class_name(current_user)
     if current_user
-      return "class=#{current_user.role}"
+      return "user-ui"
     else
-      return nil
+      return "admin-ui"
     end
   end
 

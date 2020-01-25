@@ -12,9 +12,9 @@
       <%= javascript_include_tag "vendor/modernizr" %>
 
     <%= csrf_meta_tags %>
-  </head>
+    </head>    
 
-  <body <%= UIDecider.calculate_class_name(current_user) %>>
+  <body class="<%= UIDecider.calculate_class_name(current_user) %>">
     <div class="fixed">
       <nav class="top-bar">
         <ul class="title-area">
